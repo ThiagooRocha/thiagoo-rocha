@@ -1,0 +1,105 @@
+#projects .wrappler {
+  padding-block: 10rem;
+}
+#projects .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 15rem;
+  padding-bottom: 10rem;
+}
+#projects .box-btn {
+  display: flex;
+  justify-content: center;
+  margin-block: 2rem;
+}
+#projects .box-btn button {
+  background-color: var(--gray-800);
+  font-size: 1.8rem;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 400;
+  color: var(--gray-100);
+  padding: 1rem 9rem 1rem 8.5rem;
+  letter-spacing: -11px;
+  transition: all var(--transition);
+}
+#projects .box-btn button:hover,
+#projects .box-btn button:focus {
+  background-color: var(--gray-700);
+  letter-spacing: 0px;
+}
+#projects .more-cards {
+  display: none;
+  pointer-events: none;
+  grid-template-columns: repeat(3, minmax(200px, 300px));
+  row-gap: 1.2rem;
+  column-gap: 1rem;
+  justify-content: center;
+  margin-bottom: 8rem;
+}
+#projects .more-cards.active {
+  display: grid;
+  pointer-events: initial;
+}
+#projects .more-cards a {
+  opacity: 0;
+  animation: item-movement .7s forwards;
+  animation-delay: var(--delay);
+}
+#projects .more-cards a:focus-within,
+#projects .more-cards .card:hover {
+  transition: all var(--transition);
+  transform: translateY(-8px);
+}
+#projects .more-cards .card {
+  background-color: var(--gray-800);
+  padding: 2rem 3rem;
+  border-radius: var(--border-radius-sm);
+  transition: all var(--transition);
+  height: 100%;
+}
+#projects .more-cards .card h2 {
+  color: var(--violet-500);
+}
+#projects .more-cards p {
+  max-height: 7.5rem;
+  color: var(--gray-300);
+  overflow: hidden;
+}
+
+@keyframes item-movement {
+  0% {
+    transform: translateY(40%);
+    opacity: 0%;
+  }
+  80% {
+    opacity: 100%;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #projects .more-cards {
+    grid-template-columns: repeat(2, minmax(200px, 300px));
+  }
+
+  @media screen and (max-width: 450px) {
+    #projects .more-cards {
+      grid-template-columns: repeat(1, minmax(200px, 300px));
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    #projects .cards {
+      padding-bottom: 16rem;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    #projects .cards {
+      padding-bottom: 25rem;
+    }
+  }
+}
