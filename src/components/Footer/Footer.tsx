@@ -14,7 +14,7 @@ export const Footer = () => {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/thiago-rocha-787468223/"
+              href="https://www.linkedin.com/in/thiagoo-rocha/"
               target="blank"
             >
               <SvgComponent2/>
