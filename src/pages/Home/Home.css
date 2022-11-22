@@ -37,8 +37,8 @@
   }
   30% {
     color: var(--gray-100);
-    text-shadow: -1px -1px 0 var(--purple-300), 5px 5px 0 var(--violet-500),
-      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--purple-300);
+    text-shadow: -1px -1px 0 var(--violet-700), 5px 5px 0 var(--violet-500),
+      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--violet-700);
   }
   55% {
     color: #303035;
@@ -46,13 +46,13 @@
   }
   85% {
     color: var(--gray-100);
-    text-shadow: -1px -1px 0 var(--purple-300), 5px 5px 0 var(--violet-500),
-      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--purple-300);
+    text-shadow: -1px -1px 0 var(--violet-700), 5px 5px 0 var(--violet-500),
+      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--violet-700);
   }
   100% {
     color: var(--gray-100);
-    text-shadow: -1px -1px 0 var(--purple-300), 5px 5px 0 var(--violet-500),
-      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--purple-300);
+    text-shadow: -1px -1px 0 var(--violet-700), 5px 5px 0 var(--violet-500),
+      -1px 1px 0 var(--violet-500), 10px 7px 0 var(--violet-700);
   }
 }
 
