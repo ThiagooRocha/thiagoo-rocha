@@ -64,7 +64,7 @@ export const Projects = () => {
         <div className="cards">
           <CardProject
             key={1}
-            name={"Thiagoo.Rocha"}
+            name={"Thiagoo-Rocha"}
             description={
               "Meu portfólio - Criado com o intuito de apresentar um pouco sobre mim e compartilhar meus projetos. :) "
             }
@@ -99,7 +99,7 @@ export const Projects = () => {
             filterRepos(
               "feed-review",
               "Design-system",
-              "thiagoo.rocha.com",
+              "thiagoo-rocha",
               "ThiagooRocha"
             ).map((repo, index) => {
 
