@@ -68,7 +68,7 @@ export const Projects = () => {
             description={
               "Meu portfólio - Criado com o intuito de apresentar um pouco sobre mim e compartilhar meus projetos. :) "
             }
-            html_url={"https://github.com/ThiagooRocha/thiagoo.rocha.com"}
+            html_url={"https://github.com/ThiagooRocha/thiagoo-rocha"}
             img={ThiagooRochaImg}
             tech={["React", "Typescript"]}
           />

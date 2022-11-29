@@ -1,14 +1,40 @@
 import "./Navbar.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { List, X } from "phosphor-react";
+
 export const Navbar = () => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
+  const navRef = useRef<any>();
 
   if (navMenu) {
     document.body.classList.add("active");
   } else {
     document.body.classList.remove("active");
+  }
+
+  function activeCurrentLinkMenu(currentLink: any) {
+    const navUl = navRef.current.children;
+
+    const body = document.body
+
+    const sections = body.querySelectorAll("section")
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+
+      //console.log(sectionTop + sectionHeight)
+
+    })
+
+    for (let li of navUl) {
+      let a = li.querySelector("a");
+
+      a.classList.remove("active");
+    }
+
+    currentLink.classList.add("active");
   }
 
   return (
@@ -45,18 +71,44 @@ export const Navbar = () => {
           <X size={32} />
         </button>
 
-        <ul>
-          <li onClick={() => setNavMenu(false)}>
-            <a href="#home">Home</a>
+        <ul ref={navRef}>
+          <li
+            onClick={(e) => {
+              setNavMenu(false);
+              activeCurrentLinkMenu(e.target);
+            }}
+          >
+            <a href="#home" className="active">
+              Home
+            </a>
           </li>
-          <li onClick={() => setNavMenu(false)}>
+          <li
+            onClick={(e) => {
+              setNavMenu(false);
+              activeCurrentLinkMenu(e.target);
+            }}
+          >
             <a href="#about">About</a>
           </li>
-          <li onClick={() => setNavMenu(false)}>
+          <li
+            onClick={(e) => {
+              setNavMenu(false);
+              activeCurrentLinkMenu(e.target);
+            }}
+          >
             <a href="#projects">Projects</a>
           </li>
         </ul>
-        <button onClick={() => setNavMenu(false)}>Contato</button>
+        <a
+          href="#contact"
+          className="btn-contact"
+          onClick={(e) => {
+            setNavMenu(false);
+            activeCurrentLinkMenu(e.target);
+          }}
+        >
+          Contato
+        </a>
       </div>
     </nav>
   );

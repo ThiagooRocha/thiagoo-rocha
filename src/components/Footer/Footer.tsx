@@ -1,5 +1,5 @@
 import "./Footer.css";
-import { SvgComponent1, SvgComponent2, SvgComponent3 } from "../../assets/IconsSvg"
+import { GitHubIcon, LinkedinIcon, EmailIcon } from "../../assets/IconsSvg"
 
 export const Footer = () => {
   return (
@@ -9,7 +9,7 @@ export const Footer = () => {
         <ul>
           <li>
             <a href="https://github.com/ThiagooRocha" target="blank">
-              <SvgComponent1/>
+              <GitHubIcon/>
             </a>
           </li>
           <li>
@@ -17,12 +17,12 @@ export const Footer = () => {
               href="https://www.linkedin.com/in/thiagoo-rocha/"
               target="blank"
             >
-              <SvgComponent2/>
+              <LinkedinIcon/>
             </a>
           </li>
           <li>
             <a href="mailto:thiagorochakl@gmail.com" target="blank">
-              <SvgComponent3/>
+              <EmailIcon/>
             </a>
           </li>
         </ul>

@@ -114,6 +114,18 @@
     .card-project .infos {
       top: 35%;
       width: 93%;
+      left: -1%;
+    }
+    .cards .card-project:nth-child(even) .infos {
+      right: -1%;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .card-project .infos {
+      left: -2.5%;
+    }
+    .cards .card-project:nth-child(even) .infos {
+      right: -2.5%;
     }
   }
 }
