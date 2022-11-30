@@ -29,11 +29,11 @@
   left: 0%;
   transition: all var(--transition);
 }
-#about .left-side .box-img:hover::after {
+#about .left-side .box-img:hover::after, #about .left-side.active .box-img::after {
   opacity: 0;
   filter: none;
 }
-#about .left-side .box-img:hover {
+#about .left-side .box-img:hover, #about .left-side.active .box-img {
   filter: initial;
   box-shadow: -1px -1px 0 var(--violet-500), 15px 15px 0 var(--violet-600),
     -1px 1px 0 var(--violet-600), 30px -7px 0 var(--violet-500);

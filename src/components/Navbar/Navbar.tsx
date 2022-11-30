@@ -6,35 +6,50 @@ import { List, X } from "phosphor-react";
 export const Navbar = () => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
   const navRef = useRef<any>();
+  const body = document.body;
 
   if (navMenu) {
-    document.body.classList.add("active");
+    body.classList.add("active");
   } else {
-    document.body.classList.remove("active");
+    body.classList.remove("active");
   }
 
-  function activeCurrentLinkMenu(currentLink: any) {
-    const navUl = navRef.current.children;
+  window.addEventListener("scroll", onScroll);
 
-    const body = document.body
+  function onScroll() {
+    activeCurrentLinkMenu();
+  }
 
-    const sections = body.querySelectorAll("section")
+  function activeCurrentLinkMenu() {
+
+    const sections = body.querySelectorAll("section");
 
     sections.forEach((section) => {
-      const sectionTop = section.offsetTop
-      const sectionHeight = section.offsetHeight
+      const targetLine = scrollY + innerHeight / 2;
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
 
-      //console.log(sectionTop + sectionHeight)
+      const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop;
 
-    })
+      const sectionEndsAt = sectionTop + sectionHeight;
 
-    for (let li of navUl) {
-      let a = li.querySelector("a");
+      const sectionEndPassedTargetLine = sectionEndsAt <= targetLine;
 
-      a.classList.remove("active");
-    }
+      const sectionLimits =
+        sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine;
 
-    currentLink.classList.add("active");
+      const sectionId = section.getAttribute("id");
+
+      const menuElement = body.querySelector(
+        `.navbar .container a[href*=${sectionId}]`
+      );
+
+      menuElement?.classList.remove("active");
+
+      if (sectionLimits) {
+        menuElement?.classList.add("active");
+      }
+    });
   }
 
   return (
@@ -73,9 +88,8 @@ export const Navbar = () => {
 
         <ul ref={navRef}>
           <li
-            onClick={(e) => {
+            onClick={() => {
               setNavMenu(false);
-              activeCurrentLinkMenu(e.target);
             }}
           >
             <a href="#home" className="active">
@@ -83,17 +97,15 @@ export const Navbar = () => {
             </a>
           </li>
           <li
-            onClick={(e) => {
+            onClick={() => {
               setNavMenu(false);
-              activeCurrentLinkMenu(e.target);
             }}
           >
             <a href="#about">About</a>
           </li>
           <li
-            onClick={(e) => {
+            onClick={() => {
               setNavMenu(false);
-              activeCurrentLinkMenu(e.target);
             }}
           >
             <a href="#projects">Projects</a>
@@ -102,12 +114,11 @@ export const Navbar = () => {
         <a
           href="#contact"
           className="btn-contact"
-          onClick={(e) => {
+          onClick={() => {
             setNavMenu(false);
-            activeCurrentLinkMenu(e.target);
           }}
         >
-          Contato
+          <span>Contato</span>
         </a>
       </div>
     </nav>

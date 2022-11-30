@@ -47,7 +47,10 @@
   padding-inline: 0.7rem;
   width: 100%;
 }
+
+
 .navbar .container .btn-contact {
+  position: relative;
   margin: 0 auto;
   background-color: var(--gray-700);
   color: var(--gray-100);
@@ -60,12 +63,25 @@
   align-items: center;
   justify-content: center;
   transition: var(--transition);
+  overflow: hidden;
 }
-.navbar .container .btn-contact:hover {
-  background-color: var(--gray-800);
+.navbar .container .btn-contact span {
+  position: relative;
+  z-index: 10;
 }
+
 .navbar .container .btn-contact::after {
-  display: none;
+  content: "";
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(-100%);
+  transition: all var(--transition);
+}
+.navbar .container .btn-contact.active::after, .navbar .container .btn-contact:hover::after {
+  transform: translate(0%);
 }
 
 .navbar .btn-openMenu,
