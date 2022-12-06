@@ -5,7 +5,7 @@ import { List, X } from "phosphor-react";
 
 export const Navbar = () => {
   const [navMenu, setNavMenu] = useState<boolean>(false);
-  const navRef = useRef<any>();
+  const navRef = useRef<HTMLUListElement>(null);
   const body = document.body;
 
   if (navMenu) {

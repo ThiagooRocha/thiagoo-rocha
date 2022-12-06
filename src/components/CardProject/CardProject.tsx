@@ -1,7 +1,7 @@
 import "./CardProject.css";
 
 //IMG
-import DefalutImg from "../../assets/Imgs/default_img.png"
+import DefaultImg from "../../assets/Imgs/default_img.png"
 
 interface CardProjectProps {
   name: string;
@@ -11,21 +11,20 @@ interface CardProjectProps {
   tech?: string[];
 }
 
-export const CardProject = (props: CardProjectProps) => {
-  const default_img = "../../public/default_img.png";
+export const CardProject = ({name, description, html_url, img, tech}: CardProjectProps) => {
 
   return (
     <div className="card-project">
       <div className="infos">
-        <h2>{props.name}</h2>
-        <p>{props.description}</p>
+        <h2>{name}</h2>
+        <p>{description}</p>
         <ul>
-          {props.tech &&
-            props.tech.map((element) => <li key={element}>{element}</li>)}
+          {tech &&
+            tech.map((element) => <li key={element}>{element}</li>)}
         </ul>
       </div>
-      <a href={props.html_url} target="blank">
-        <img src={props.img ? props.img : default_img} alt={props.name} />
+      <a href={html_url} target="blank">
+        <img src={img ? img : DefaultImg} alt={name} />
       </a>
     </div>
   );

@@ -5,10 +5,10 @@ import { Newspaper, X } from "phosphor-react";
 import * as Dialog from "@radix-ui/react-dialog";
 
 interface ResumeModalProps {
-  children: any;
+  children: React.ReactNode;
 }
 
-export const ResumeModal = (props: ResumeModalProps) => {
+export const ResumeModal = ({children}: ResumeModalProps) => {
   return (
       <Dialog.Root>
         <Dialog.Trigger>
@@ -18,7 +18,7 @@ export const ResumeModal = (props: ResumeModalProps) => {
         <Dialog.Portal>
           <Dialog.Overlay className="resume-overlay" />
           <Dialog.Content className="resume-container">
-            <div className="box-img">{props.children}</div>
+            <div className="box-img">{children}</div>
           <Dialog.Close className="btn-close"><X size={35}/> </Dialog.Close>
           </Dialog.Content>
         </Dialog.Portal>

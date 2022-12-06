@@ -1,18 +1,19 @@
 import "./EducationModal.css";
 
 import { Medal, CaretRight, CaretLeft } from "phosphor-react";
-import { useRef } from "react";
+import React, { useRef } from "react";
 
 import * as Dialog from "@radix-ui/react-dialog";
 
 interface EducationProps {
-  children: any;
+  children: React.ReactNode;
 }
 
-export const EducationModal = (props: EducationProps) => {
+export const EducationModal = ({children}: EducationProps) => {
   const refImgs = useRef<any>(null);
 
   const handleLeftClick = () => {
+
     refImgs.current.scrollLeft -= refImgs.current.offsetWidth;
   };
   const handleRightClick = () => {
@@ -32,7 +33,7 @@ export const EducationModal = (props: EducationProps) => {
             className="box-imgs"
             ref={refImgs}
           >
-            {props.children}
+            {children}
           </div>
           <div className="box-btn">
             <button className="leftBtn" onClick={handleLeftClick}><CaretLeft size={32} /></button>

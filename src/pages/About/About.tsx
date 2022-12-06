@@ -33,14 +33,15 @@ export const About = () => {
               <EducationModal>
                 <img
                   src="https://user-images.githubusercontent.com/100046543/201716977-f0d7f11a-8788-45ea-8826-77490cb9fe07.jpeg"
-                  alt=""
+                  alt="Certificate"
+                />
+                <img
+                  src="https://user-images.githubusercontent.com/100046543/206016017-d08c53f2-1718-46a0-a69d-eb6bde790376.png"
+                  alt="Certificate"
                 />
               </EducationModal>
               <ResumeModal>
-                <embed
-                  src={Resume}
-                  type="application/pdf"
-                />
+                <embed src={Resume} type="application/pdf" />
               </ResumeModal>
             </div>
           </div>

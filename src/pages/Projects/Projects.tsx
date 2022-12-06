@@ -8,17 +8,17 @@ import ThiagooRochaImg from "../../assets/Imgs/img_thiagoo.rocha.png";
 import FeedReviewImg from "../../assets/Imgs/img_feed-review.png";
 import DesignSystemImg from "../../assets/Imgs/img_design-system.png";
 
+interface Repos {
+  id: number;
+  name: string;
+  description: string;
+  html_url: string;
+  languages_url?: string;
+}
+
 export const Projects = () => {
   const [repos, setRepos] = useState<Repos[]>([]);
   const [moreProjects, setMoreProjects] = useState<boolean>(false);
-
-  interface Repos {
-    id: number;
-    name: string;
-    description: string;
-    html_url: string;
-    languages_url?: string;
-  }
 
   useEffect(() => {
     async function fetchRepos() {
